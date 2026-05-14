@@ -9,12 +9,12 @@ class Department(Base):
     __tablename__ = "departments"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(200), nullable=False)                 # название, не пустое
+    name = Column(String(200), nullable=False)
     parent_id = Column(Integer, ForeignKey("departments.id", ondelete="CASCADE"), nullable=True)
     created_at = Column(DateTime, server_default=func.now())
 
-    # Связи: родитель, дети, сотрудники
-    parent = relationship("Department", remote_side=[id], backref="children", cascade="all, delete-orphan")
+    # Исправлено: убран delete-orphan, оставлен только cascade="all"
+    parent = relationship("Department", remote_side=[id], backref="children", cascade="all")
     employees = relationship("Employee", back_populates="department", cascade="all, delete-orphan")
 
 class Employee(Base):
