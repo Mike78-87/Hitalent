@@ -1,26 +1,29 @@
 organization_api/
 ├── app/
+│   ├── tests/
+│   │   ├── __init__.py
+│   │   ├── conftest.py
+│   │   ├── test_departments.py
+│   │   └── test_employees.py
 │   ├── __init__.py
 │   ├── main.py
 │   ├── database.py
 │   ├── models.py
 │   ├── schemas.py
 │   ├── crud.py
-│   ├── routers/
-│   │   ├── __init__.py
-│   │   ├── departments.py
-│   │   └── employees.py
-│   └── tests/
+│   └── routers/
 │       ├── __init__.py
-│       ├── conftest.py
-│       ├── test_departments.py
-│       └── test_employees.py
-├── migrations/                 # создаётся alembic
+│       ├── departments.py
+│       └── employees.py
+├── migrations/
+│   ├── __init__.py
 │   └── versions/
+│       ├── __init__.py
 │       └── 001_initial.py
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
 ├── .env
 ├── alembic.ini
+├── TASK.md
 └── README.md
