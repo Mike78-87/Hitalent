@@ -45,6 +45,9 @@ class EmployeeBase(BaseModel):
             raise ValueError('Поле не может быть пустым')
         return v
 
+class EmployeeCreate(EmployeeBase):
+    pass
+
 # ---------- Схемы для ответов ----------
 class EmployeeResponse(EmployeeBase):
     id: int
