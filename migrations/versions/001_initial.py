@@ -42,5 +42,3 @@ def downgrade() -> None:
     op.drop_table('employees')
     op.drop_index(op.f('ix_departments_id'), table_name='departments')
     op.drop_table('departments')
-
-commit message: "Добавлена миграция"
