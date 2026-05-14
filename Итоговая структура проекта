@@ -1,30 +1,35 @@
-organization_api/
+Hitalent/
+├── .github/
+│   └── workflows/
+│       └── test.yml              # GitHub Actions CI
 ├── app/
-│   ├── tests/
-│   │   ├── __init__.py
-│   │   ├── conftest.py
-│   │   ├── test_departments.py
-│   │   └── test_employees.py
 │   ├── __init__.py
-│   ├── main.py
-│   ├── database.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── crud.py
-│   └── routers/
+│   ├── main.py                   # Точка входа FastAPI
+│   ├── database.py               # Подключение к БД
+│   ├── models.py                 # SQLAlchemy модели
+│   ├── schemas.py                # Pydantic схемы (валидация)
+│   ├── crud.py                   # Бизнес-логика
+│   ├── dependencies.py           # Зависимости FastAPI
+│   ├── routers/
+│   │   ├── __init__.py
+│   │   ├── departments.py        # Эндпоинты подразделений
+│   │   └── employees.py          # Эндпоинты сотрудников
+│   └── tests/
 │       ├── __init__.py
-│       ├── departments.py
-│       └── employees.py
+│       ├── conftest.py           # Фикстуры для pytest
+│       ├── test_departments.py   # 6 тестов подразделений
+│       └── test_employees.py     # 3 теста сотрудников
 ├── migrations/
 │   ├── __init__.py
+│   ├── env.py                    # Настройки Alembic
+│   ├── script.py.mako            # Шаблон миграций
 │   └── versions/
 │       ├── __init__.py
-│       └── 001_initial.py
+│       └── 001_initial.py        # Начальная миграция
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
 ├── .env
 ├── alembic.ini
-├── TASK.md
-└── README.md
-
+├── TASK.md                       # Техническое задание
+└── README.md                     # Этот файл
